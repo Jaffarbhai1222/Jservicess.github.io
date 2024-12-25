@@ -7,8 +7,8 @@
     <title>Jservicess Marketing Agency - Coming Soon</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/fireworks-js/dist/fireworks.min.js"></script> <!-- Fireworks.js Library -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script> <!-- Confetti.js -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- FontAwesome for WhatsApp icon -->
     <style>
         /* Basic Reset */
         * {
@@ -36,34 +36,27 @@
             margin-top: 50px;
         }
 
+        /* General Text Hover Effect */
+        .hover-text {
+            transition: transform 0.3s, color 0.3s, text-shadow 0.3s, border-bottom 0.3s;
+            position: relative;
+        }
+
+        .hover-text:hover {
+            transform: scale(1.05);  /* Subtle scale effect */
+            color: #ff5733;
+            text-shadow: 0 0 20px rgba(255, 87, 51, 0.8);
+            border-bottom: 2px solid #ff5733;  /* Smaller underline on hover */
+        }
+
         .hero-section h1 {
-            font-size: 5rem;
+            font-size: 2.5rem;  /* Reduced font size for smaller title */
             color: #ff0000;
             font-weight: 700;
             text-transform: uppercase;
             margin-bottom: 20px;
             text-shadow: 0 0 10px rgba(255, 0, 0, 0.8), 0 0 20px rgba(255, 0, 0, 0.6), 0 0 30px rgba(255, 0, 0, 0.4);
             animation: textAnim 2s ease-in-out;
-            transition: transform 0.4s, color 0.4s, text-shadow 0.4s, border-bottom 0.4s;
-            position: relative;
-        }
-
-        .hero-section h1:hover {
-            transform: scale(1.1);
-            color: #ff5733;
-            text-shadow: 0 0 20px rgba(255, 87, 51, 0.8);
-            border-bottom: 3px solid #ff5733; /* Underline effect on hover */
-        }
-
-        @keyframes textAnim {
-            0% {
-                transform: scale(0.5);
-                opacity: 0;
-            }
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
         }
 
         .hero-section p {
@@ -71,13 +64,6 @@
             margin-bottom: 30px;
             color: #333;
             animation: textAnim 2s ease-in-out;
-            transition: transform 0.4s, color 0.4s;
-        }
-
-        .hero-section p:hover {
-            transform: scale(1.1) rotate(-3deg);
-            color: #ff5733; /* Color change on hover */
-            text-decoration: underline; /* Underline effect on hover */
         }
 
         .countdown {
@@ -87,32 +73,16 @@
             margin-bottom: 40px;
             text-shadow: 0 0 10px rgba(255, 0, 0, 0.8), 0 0 20px rgba(255, 0, 0, 0.6), 0 0 30px rgba(255, 0, 0, 0.4);
             animation: textAnim 2s ease-in-out;
-            transition: transform 0.4s, color 0.4s, text-shadow 0.4s;
-        }
-
-        .countdown:hover {
-            transform: scale(1.1) rotate(10deg);
-            color: #ff5733;
-            text-shadow: 0 0 15px rgba(255, 87, 51, 1);
-            text-decoration: underline; /* Underline effect on hover */
         }
 
         /* New Year Journey Line */
         .new-year-journey {
-            font-size: 2.0rem;
-            color: #000;
-            font-weight: 600;
-            margin-top: 30px;
-            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            font-size: 1.8rem;
+            color: black; /* Changed to black */
+            font-weight: 500;
+            margin-top: 20px;
+            text-align: center;
             animation: textAnim 2s ease-in-out;
-            transition: transform 0.4s, color 0.4s, text-shadow 0.4s;
-        }
-
-        .new-year-journey:hover {
-            transform: skewX(10deg) scale(1.1);
-            color: #ff5733;
-            text-shadow: 0 0 10px rgba(255, 87, 51, 1);
-            text-decoration: underline; /* Underline effect on hover */
         }
 
         /* WhatsApp Button - Custom */
@@ -181,16 +151,6 @@
             }
         }
 
-        /* Particle Container */
-        #particles-js {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-        }
-
         /* Pulse animation */
         @keyframes pulse {
             0% {
@@ -202,6 +162,16 @@
             100% {
                 transform: scale(1);
             }
+        }
+
+        /* Particle Container */
+        #particles-js {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
         }
     </style>
 </head>
@@ -215,14 +185,14 @@
 
 <!-- Hero Section -->
 <div class="hero-section">
-    <h1>Jservicess Marketing Agency</h1>
-    <p>We're coming soon to deliver top-notch digital marketing services!</p>
+    <h1 class="hover-text">Jservicess Marketing Agency</h1>
+    <p class="hover-text">We're coming soon to deliver top-notch digital marketing services!</p>
 
     <!-- Countdown Timer -->
-    <div class="countdown" id="countdown"></div>
+    <div class="countdown hover-text" id="countdown"></div>
 
     <!-- New Year Journey Line -->
-    <div class="new-year-journey">A New Year, A New Journey Awaits!</div>
+    <div class="new-year-journey hover-text">A New Year, A New Journey Awaits!</div>
 
     <!-- Contact Button - WhatsApp Custom Button -->
     <a href="https://wa.me/923162045631" target="_blank" class="whatsapp-btn">
@@ -232,10 +202,9 @@
 
 <!-- Watermark for CEO -->
 <footer>
-    <p class="watermark">Jaffar Yameen - CEO</p>
+    <p class="watermark hover-text">Jaffar Yameen - CEO</p>
 </footer>
 
-<script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- FontAwesome for WhatsApp icon -->
 <script>
     // Countdown Timer for New Year
     var countdownDate = new Date("Jan 1, 2025 00:00:00").getTime();
@@ -268,7 +237,7 @@
                 }
             },
             color: {
-                value: "#ff0000"  // Red particles
+                value: "#ff5733"  // Orange-Red particles for a celebratory feel
             },
             shape: {
                 type: "circle",
@@ -300,7 +269,7 @@
             line_linked: {
                 enable: true,
                 distance: 150,
-                color: "#ff0000",  // Red lines connecting particles
+                color: "#ff5733",  // Orange-Red lines connecting particles
                 opacity: 0.4,
                 width: 1
             },
@@ -342,36 +311,6 @@
         },
         retina_detect: true
     });
-
-    // Fireworks Configuration
-    const fireworks = new Fireworks({
-        target: document.body,
-        hue: 360,
-        speed: 4,
-        width: "100%",
-        height: "100%",
-        density: 100,
-        particleSize: 4,
-        maxRockets: 5
-    });
-    fireworks.start();
-
-    // Confetti Effect (Celebration)
-    function createConfetti() {
-        var interval = setInterval(function() {
-            confetti({
-                particleCount: 1000,
-                spread: 70,
-                origin: { y: 0.6 }
-            });
-        }, 1000);
-
-        setTimeout(function() {
-            clearInterval(interval);
-        }, 5000);
-    }
-
-    createConfetti();
 </script>
 
 </body>
