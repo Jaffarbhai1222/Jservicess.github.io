@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Jservicess Marketing Agency - Coming Soon</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fireworks-js/dist/fireworks.min.js"></script> <!-- Fireworks.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script> <!-- Confetti.js -->
     <style>
         /* Basic Reset */
         * {
@@ -17,77 +19,159 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #f1f1f1;
+            background-color: #fff;
             overflow-x: hidden;
+            position: relative;
+            height: 100vh;
+            color: #fff;
         }
 
+        /* Hero Section */
         .hero-section {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-color: #e60000;
-            color: white;
             text-align: center;
+            color: #fff;
             animation: fadeIn 2s ease-in-out;
+            position: relative;
+            z-index: 2;
+            margin-top: 50px;
         }
 
         .hero-section h1 {
-            font-size: 4rem;
+            font-size: 5rem;
+            color: #ff0000;
+            font-weight: 700;
+            text-transform: uppercase;
             margin-bottom: 20px;
-            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.8), 0 0 20px rgba(255, 0, 0, 0.6), 0 0 30px rgba(255, 0, 0, 0.4);
+            animation: textAnim 2s ease-in-out;
+            transition: transform 0.4s, color 0.4s, text-shadow 0.4s, border-bottom 0.4s;
+            position: relative;
+        }
+
+        .hero-section h1:hover {
+            transform: scale(1.1);
+            color: #ff5733;
+            text-shadow: 0 0 20px rgba(255, 87, 51, 0.8);
+            border-bottom: 3px solid #ff5733; /* Underline effect on hover */
+        }
+
+        @keyframes textAnim {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
 
         .hero-section p {
             font-size: 1.5rem;
             margin-bottom: 30px;
+            color: #333;
+            animation: textAnim 2s ease-in-out;
+            transition: transform 0.4s, color 0.4s;
+        }
+
+        .hero-section p:hover {
+            transform: scale(1.1) rotate(-3deg);
+            color: #ff5733; /* Color change on hover */
+            text-decoration: underline; /* Underline effect on hover */
         }
 
         .countdown {
             font-size: 2.5rem;
             font-weight: 600;
+            color: #ff0000;
             margin-bottom: 40px;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.8), 0 0 20px rgba(255, 0, 0, 0.6), 0 0 30px rgba(255, 0, 0, 0.4);
+            animation: textAnim 2s ease-in-out;
+            transition: transform 0.4s, color 0.4s, text-shadow 0.4s;
         }
 
-        .social-icons {
-            display: flex;
+        .countdown:hover {
+            transform: scale(1.1) rotate(10deg);
+            color: #ff5733;
+            text-shadow: 0 0 15px rgba(255, 87, 51, 1);
+            text-decoration: underline; /* Underline effect on hover */
+        }
+
+        /* New Year Journey Line */
+        .new-year-journey {
+            font-size: 2rem;
+            color: #000;
+            font-weight: 600;
+            margin-top: 30px;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            animation: textAnim 2s ease-in-out;
+            transition: transform 0.4s, color 0.4s, text-shadow 0.4s;
+        }
+
+        .new-year-journey:hover {
+            transform: skewX(10deg) scale(1.1);
+            color: #ff5733;
+            text-shadow: 0 0 10px rgba(255, 87, 51, 1);
+            text-decoration: underline; /* Underline effect on hover */
+        }
+
+        /* WhatsApp Button - Custom */
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
             justify-content: center;
-            gap: 25px;
+            background-color: #25d366; /* WhatsApp Green */
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.6rem;
+            padding: 12px 30px;
+            border-radius: 30px;
+            transition: transform 0.4s, box-shadow 0.4s, background-color 0.4s, scale 0.4s;
+            border: 2px solid #25d366;
+            margin-top: 30px;
         }
 
-        .social-icons a {
-            color: white;
-            font-size: 2.5rem;
-            transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+        .whatsapp-btn:hover {
+            background-color: #128c7e; /* Darker Green */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+            transform: scale(1.1) rotate(10deg);
+            animation: pulse 0.6s ease-in-out infinite;
         }
 
-        .social-icons a:hover {
-            transform: scale(1.3);
-            color: #25d366; /* WhatsApp green */
+        .whatsapp-btn i {
+            margin-right: 10px;
+            font-size: 1.8rem;
         }
 
-        .social-icons .whatsapp {
-            background-color: #25d366;
-            border-radius: 50%;
-            padding: 10px;
-        }
-
-        .social-icons .whatsapp:hover {
-            background-color: #128c7e;
-        }
-
+        /* Watermark for CEO */
         footer {
             position: fixed;
-            width: 100%;
-            bottom: 0;
-            background-color: #e60000;
-            text-align: center;
-            padding: 15px;
-            color: white;
-            font-size: 1rem;
+            bottom: 10px;
+            right: 10px;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.8rem;
+            font-style: italic;
         }
 
+        .watermark {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        /* Background Image Styling */
+        .background-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://via.placeholder.com/1500x1000') no-repeat center center/cover;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        /* Animation */
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -96,36 +180,64 @@
                 opacity: 1;
             }
         }
+
+        /* Particle Container */
+        #particles-js {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+
+        /* Pulse animation */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
     </style>
 </head>
 <body>
 
+<!-- Particle Background -->
+<div id="particles-js"></div>
+
+<!-- Background Image -->
+<div class="background-img"></div>
+
 <!-- Hero Section -->
 <div class="hero-section">
     <h1>Jservicess Marketing Agency</h1>
-    <p>We’re launching soon! Stay tuned for more updates.</p>
+    <p>We're coming soon to deliver top-notch digital marketing services!</p>
 
-    <!-- Countdown (Optional) -->
-    <div class="countdown" id="countdown">
-        <p>Our Website is Coming Soon</p>
-    </div>
+    <!-- Countdown Timer -->
+    <div class="countdown" id="countdown"></div>
 
-    <!-- WhatsApp Button -->
-    <div class="social-icons">
-        <a href="https://wa.me/923162045631" class="whatsapp" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-    </div>
+    <!-- New Year Journey Line -->
+    <div class="new-year-journey">A New Year, A New Journey Awaits!</div>
+
+    <!-- Contact Button - WhatsApp Custom Button -->
+    <a href="https://wa.me/923162045631" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Contact Us on WhatsApp
+    </a>
 </div>
 
-<!-- Footer Section -->
+<!-- Watermark for CEO -->
 <footer>
-    <p>&copy; 2024 Jservicess Marketing Agency. All Rights Reserved.</p>
+    <p class="watermark">Jaffar Yameen - CEO</p>
 </footer>
 
-<!-- Countdown Timer Script (Optional) -->
+<script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- FontAwesome for WhatsApp icon -->
 <script>
-    // Countdown Timer (Optional)
+    // Countdown Timer for New Year
     var countdownDate = new Date("Jan 1, 2025 00:00:00").getTime();
     var countdownFunction = setInterval(function() {
         var now = new Date().getTime();
@@ -136,19 +248,131 @@
         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+        document.getElementById("countdown").innerHTML = "New Year Countdown: " + days + "d " + hours + "h "
         + minutes + "m " + seconds + "s ";
 
         if (distance < 0) {
             clearInterval(countdownFunction);
-            document.getElementById("countdown").innerHTML = "Launched!";
+            document.getElementById("countdown").innerHTML = "Happy New Year!";
         }
     }, 1000);
+
+    // Particles.js Configuration
+    particlesJS("particles-js", {
+        particles: {
+            number: {
+                value: 80,
+                density: {
+                    enable: true,
+                    value_area: 800
+                }
+            },
+            color: {
+                value: "#ff0000"  // Red particles
+            },
+            shape: {
+                type: "circle",
+                stroke: {
+                    width: 0,
+                    color: "#000000"
+                }
+            },
+            opacity: {
+                value: 0.5,
+                random: true,
+                anim: {
+                    enable: true,
+                    speed: 1,
+                    opacity_min: 0.1,
+                    sync: false
+                }
+            },
+            size: {
+                value: 5,
+                random: true,
+                anim: {
+                    enable: true,
+                    speed: 3,
+                    size_min: 0.1,
+                    sync: false
+                }
+            },
+            line_linked: {
+                enable: true,
+                distance: 150,
+                color: "#ff0000",  // Red lines connecting particles
+                opacity: 0.4,
+                width: 1
+            },
+            move: {
+                enable: true,
+                speed: 3,
+                direction: "none",
+                random: false,
+                straight: false,
+                out_mode: "out",
+                bounce: false,
+                attract: {
+                    enable: false,
+                    rotateX: 600,
+                    rotateY: 1200
+                }
+            }
+        },
+        interactivity: {
+            events: {
+                onhover: {
+                    enable: true,
+                    mode: "repulse"
+                },
+                onclick: {
+                    enable: true,
+                    mode: "push"
+                }
+            },
+            modes: {
+                repulse: {
+                    distance: 100,
+                    duration: 0.4
+                },
+                push: {
+                    particles_nb: 4
+                }
+            }
+        },
+        retina_detect: true
+    });
+
+    // Fireworks Configuration
+    const fireworks = new Fireworks({
+        target: document.body,
+        hue: 360,
+        speed: 4,
+        width: "100%",
+        height: "100%",
+        density: 100,
+        particleSize: 4,
+        maxRockets: 5
+    });
+    fireworks.start();
+
+    // Confetti Effect (Celebration)
+    function createConfetti() {
+        var interval = setInterval(function() {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        }, 1000);
+
+        setTimeout(function() {
+            clearInterval(interval);
+        }, 5000);
+    }
+
+    createConfetti();
 </script>
-
-</body>
-</html
-
 
 </body>
 </html>
