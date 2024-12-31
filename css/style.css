@@ -79,25 +79,102 @@ h6,
 }
 
 
-/* Custom Navbar Styling */
-/* Make navbar transparent and add shadow on scroll */
+/* Basic Navbar Styling */
 .navbar {
-    background-color: rgba(255, 255, 255, 0.8) !important;
-    transition: background-color 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.8) !important; /* Transparent background */
+    transition: all 0.3s ease; /* Smooth transition for scroll effect */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
+/* When Navbar becomes sticky (after scrolling) */
 .navbar.sticky-top {
-    background-color: rgba(255, 255, 255, 1) !important; /* Fully opaque when scrolled */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: rgba(255, 255, 255, 1) !important; /* Solid background when scrolled */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for floating effect */
 }
 
-/* Add shadow on sticky navbar */
-.navbar.navbar-light {
-    box-shadow: none; /* Default, no shadow */
+/* Mobile view (Navbar Toggler) */
+.navbar-toggler {
+    border: none;
+    background: transparent;
 }
 
-.navbar.sticky-top {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+.navbar-toggler .fa-bars {
+    color: #333; /* Dark color for the hamburger icon */
+}
+
+/* Adjust Logo size on smaller screens */
+.logo-img {
+    max-width: 150px; /* Adjust as needed */
+}
+
+/* Add margin on mobile to avoid logo being too close to the top */
+@media (max-width: 992px) {
+    .navbar .navbar-nav {
+        margin-top: 10px;
+    }
+}
+
+/* Add styles for the navbar items */
+.nav-item {
+    font-size: 16px;
+    padding: 10px 15px;
+}
+
+.nav-link {
+    color: #333 !important; /* Ensure text is dark enough to be visible */
+    padding: 10px 20px;
+}
+
+.nav-link:hover {
+    color: #007bff; /* Change color on hover for a sleek effect */
+}
+
+.nav-item.active {
+    font-weight: bold; /* Make active nav items bold */
+}
+
+.dropdown-menu {
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+}
+
+/* Responsive styling */
+.nav-icos {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.open-ico,
+.close-ico {
+    width: 25px;
+    height: 25px;
+}
+
+.open-ico {
+    display: block;
+}
+
+.close-ico {
+    display: none;
+}
+
+.navbar-toggler:focus {
+    outline: none;
+}
+
+/* For mobile toggle icon to open/close menu */
+.navbar-collapse.show {
+    display: block !important;
+}
+
+.navbar-collapse {
+    display: none !important;
 }
 
 
