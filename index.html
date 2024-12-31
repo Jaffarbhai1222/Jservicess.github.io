@@ -47,37 +47,41 @@ Jservicess is a digital marketing agency that helps boost your brand’s online 
 
 <!-- Navbar & Hero Start -->
 <div class="container-xxl position-relative p-0">
-    <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+    <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0 fixed-top">
         <!-- Logo Section -->
         <a href="#top" class="navbar-brand p-0">
             <img src="https://cdn.prod.website-files.com/66792cf7acc128ff6fd49310/667935cc2c35916728abd40d_Samanta%20holod.svg" loading="eager" alt="Samanta Holod logo" class="logo-img">
         </a>
         
         <!-- Navbar Toggler (Mobile Menu) -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="fa fa-bars"></span>
         </button>
         
         <!-- Navbar Links (Main Navigation) -->
-         <a href="index.html" class="nav-item nav-link active">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="service.html" class="nav-item nav-link">Service</a>
-                        <a href="project.html" class="nav-item nav-link">Project</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu m-0">
-                                <a href="team.html" class="dropdown-item">Our Team</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                <a href="404.html" class="dropdown-item">404 Page</a>
-                            </div>
-                        </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
-                    </div>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="service.html" class="nav-item nav-link">Service</a>
+                <a href="project.html" class="nav-item nav-link">Project</a>
+                
+                <!-- Dropdown Menu for Pages -->
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="team.html" class="dropdown-item">Our Team</a>
+                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                        <a href="404.html" class="dropdown-item">404 Page</a>
                     </div>
                 </div>
+
+                <!-- Contact Link -->
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
             </div>
         </div>
     </nav>
+</div>
 
     <!-- Hero Section Start -->
     <div class="container-xxl py-5 bg-primary hero-header mb-5">
