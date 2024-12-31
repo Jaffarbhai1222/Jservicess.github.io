@@ -16,14 +16,29 @@
     new WOW().init();
 
 
-    // Sticky Navbar
+   (function ($) {
+    "use strict";
+
+    // Sticky Navbar with Scroll Effect
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 45) {
-            $('.navbar').addClass('sticky-top shadow-sm');
+        var scroll = $(window).scrollTop();
+        
+        if (scroll >= 50) {
+            $('#navbar').addClass('sticky-top'); // Add sticky class after scroll
         } else {
-            $('.navbar').removeClass('sticky-top shadow-sm');
+            $('#navbar').removeClass('sticky-top'); // Remove sticky class when at top
         }
     });
+
+    // Toggle Mobile Navbar
+    $(".navbar-toggler").click(function () {
+        $(".navbar-collapse").toggle();
+        $(".open-ico").toggle();
+        $(".close-ico").toggle();
+    });
+
+})(jQuery);
+
     
     
     // Dropdown on mouse hover
