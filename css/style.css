@@ -29,30 +29,93 @@
     border-radius: 50px;
 }
 
-/* Navbar */
-.navbar.sticky-top {
-    background-color: rgba(255, 255, 255, 1) !important;
+/* Basic Styles for Navbar */
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Logo Styling */
+.logo-img {
+    max-width: 150px;
+}
+
+/* Links and Navigation Items */
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-link .txt16 {
+    font-size: 16px;
 }
 
 .nav-link:hover {
     color: #FF0000; /* Red color on hover */
 }
 
-.nav-item.active {
-    font-weight: bold;
+/* Menu Icons (Hamburger Icon) */
+.nav-icos {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
 }
 
-.navbar-toggler .fa-bars {
-    color: #333; /* Dark color for hamburger icon */
+.open-ico,
+.close-ico {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
 }
 
-.navbar-toggler:focus {
-    outline: none;
+/* Mobile view for Navbar */
+.navbar-toggler {
+    border: none;
+    background: transparent;
 }
 
 .navbar-collapse.show {
     display: block !important;
 }
+
+.navbar-collapse {
+    display: none !important;
+}
+
+/* Optional - Nav Icon Transitions */
+.open-ico,
+.close-ico {
+    transition: all 0.3s ease;
+}
+
+.open-ico {
+    display: block;
+}
+
+.close-ico {
+    display: none;
+}
+
+/* Mobile Navigation Icon Display */
+.navbar-toggler:focus {
+    outline: none;
+}
+
 
 /*** Hero Header ***/
 .hero-header {
