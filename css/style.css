@@ -1,7 +1,7 @@
 /********** Template CSS **********/
 :root {
-  --primary: black; /* Main color, a red shade */
-  --secondary: #212121; /* Secondary color, a black shade */
+  --primary: red; /* Main color, a red shade */
+  --secondary: black; /* Secondary color, a black shade */
   --light: #FFEBEE; /* Light color, a very light red */
   --dark: #B71C1C; /* Dark color, a very deep red */
 }
@@ -84,7 +84,10 @@ h6,
     transition: .5s;
 }
 
-.btn-primary,
+.btn-primary 
+{
+  color: RED;
+}
 .btn-secondary {
     color: RED;
     box-shadow: inset 0 0 0 50px transparent;
