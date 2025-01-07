@@ -1,6 +1,6 @@
 /********** Template CSS **********/
 :root {
-  --primary: #E53935; /* Main color, a red shade */
+  --primary: black; /* Main color, a red shade */
   --secondary: #212121; /* Secondary color, a black shade */
   --light: #FFEBEE; /* Light color, a very light red */
   --dark: #B71C1C; /* Dark color, a very deep red */
